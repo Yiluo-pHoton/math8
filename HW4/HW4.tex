@@ -1,0 +1,269 @@
+\documentclass[12pt,letterpaper]{hmcpset}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath,mathpazo}
+
+% info for header block in upper right hand corner
+\name{Yiluo Li}
+\class{MATH 8}
+\assignment{HW 4}
+\duedate{30 Oct 2017}
+
+\begin{document}
+
+\problemlist{The Integers}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+\textbf{Problem 1} For each of the following pairs a,b of integers,find the highest common factor d = hcf(a,b), and find integers s,t such that d = sa + tb:
+\newline(i) a=17, b=29. 
+\newline(ii) a=552, b=713. 
+\newline(iii) a=345, b=299.
+\end{problem}
+
+\begin{solution}
+\textbf{(i)}
+\begin{align*}
+17	&= 29(0) + 17	\\
+29	&= 17(1) + 12	\\
+17	&= 12(1) + 5		\\
+12	&= 5(2) + 2		\\
+5	&= 2(2) + 1		\\
+2	&= 1(2) + 0		\\
+hcf(17,\ 29)&= \boxed{1}	\\
+1	&=5 - 2(2)	\\
+1	&=5 - 2(12 - 5(2))	\\
+1	&=	(17-12)(5) - 12(2)\\
+1	&= (29-17)(-7)+17(5)	\\
+1	&= \boxed{29(-7)+17(12)}
+\end{align*}
+\end{solution}
+
+\begin{solution}
+\textbf{(ii)}
+\begin{align*}
+552	&= 713(0) + 552	\\
+713	&= 552(1) + 161 	\\
+552	&= 161(3) + 69	\\
+161	&= 69(2) + 23	\\
+69	&= 23(3) + 0		\\
+hcf(552,\ 713)&=\boxed{23}	\\
+23	&= 161 - 69(2)	\\
+23	&= 161(7) - 552(2)	\\
+23	&= \boxed{713(7) - 552(9)}
+\end{align*}
+
+\end{solution}
+
+\begin{solution}
+\textbf{(iii)}
+\begin{align*}
+345	&= 299(1) + 46	\\
+299	&= 46(6) + 23	\\
+46	&= 23(2) + 0		\\
+hcf(345, 299) &= \boxed{23}	\\
+23	&= 299 - 46(6)	\\
+23	&= \boxed{299(7) - 345(6)}
+\end{align*}
+
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+\textbf{Problem 3} A train leaves Moscow for St. Petersburg every 7 hours, on the hour.
+Show that on some days it is possible to catch this train at 9 a.m.\newline
+Whenever there is a 9 a.m. train, Ivan takes it to visit his aunt Olga. How often does Olga see her nephew? \newline
+Discuss the corresponding problem involving the train to Vladivostok, which leaves Moscow every 14 hours.
+\end{problem}
+
+\begin{solution}
+\textbf{Part One}
+\begin{align*}
+hcf(24, 7) &= 1 \\
+1 &= 24s + 7t 	\\
+\end{align*} 
+By having the above equation, we know that after every t trains and s days, the departing hour of the train will vary by 1 hour. Therefore, all hours (including 9 a.m) in a day will have a train departing on some day.
+\newline \newline \textbf{Part Two} Suppose the first train leaves at 9 a.m., then the next time it will leave at 9 a.m. is after 24x hours. Because the train leaves every 7 hours, 24x is a multiple of 7, and x = 7. Therefore, after every 24 x 7 (a.k.a 7 days) hours, Olga can see her nephew.
+\newline \newline \textbf{Part Three} 
+\begin{align*}
+hcf(14, 24) &= 2	\\
+2	&= 24s + 14t	\\
+\end{align*} 
+Therefore, when the train leaves on an odd hour on the first day, it will not leave on even hours after, vice versa.
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+\textbf{Problem 5} (a) Let m, n be coprime integers, and suppose a is an integer which is divisible by both m and n. Prove that mn divides a.
+(b) Show that the conclusion of part (a) is false if m and n are not coprime (i.e., show that if m and n are not coprime, there exists an integer a such that m $\mid$ a and n $\mid$ a, but mn does not divide a).
+\end{problem}
+
+\begin{solution}
+\textbf{Proof (a):} Since m $\mid$ a, we can write a = $k_1$m for some integer $k_1$. Since m is coprime with n, we can write:
+\begin{align*}
+1 &= tm + sn		\\
+k_1	&= tk_1m + sk_1n	\\
+k_1	&= ta + sk_1n
+\end{align*} 
+Since n $\mid$ a, this equation can be $k_1 = k_2n$. Plug this back into $a = k_1m$ we get $a = k_2mn$. Therefore a is divisible by mn.
+\end{solution}
+
+
+\begin{solution}
+\textbf{(b):} If m and n are not coprime, k = hcf(m, n) for some integer k $\ge$ 2. By letting m = ki, n = kj, we will get m $\mid$ ijk and n $\mid$ ijk, but mn $\nmid$ ijk.
+\end{solution}
+\problemlist{Prime Factorization}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+\textbf{Problem 3} Suppose n $\geqslant$ 2 is an integer with the property that whenever a prime \emph{p} divides \emph{n}, $p^{2}$ also divides \emph{n} (i.e., all primes in the prime factorization of \emph{n} appear at least to the power 2). Prove that \emph{n} can be written as the product of a square and a cube.
+\end{problem}
+
+\begin{solution}
+\textbf{Proof:}
+\newline \textbf{($a^{3}b^{2} \Rightarrow p^{2} \mid n $)}
+\newline Let $a^{3}b^{2}=x$ for some a, b $\in\mathbb{Z}$, prove that x satisfies the property of n:
+\newline Integer a and b can be written as the product of primes:
+\begin{align*}
+x	&= (p_{a1}p_{a2}p_{a3}...p_{aj})^{3}(p_{b1}p_{b2}p_{b3}...p_{bk})^{2}
+\end{align*}
+In which $p_{aj}$ and $p_{bk}$ represents prime factors of a and b. Notice that every unique prime numbers in the above equation repeats at least twice. Therefore, x divisible by any of the above prime number is also divisible by this prime number's square.
+\newline\newline \textbf{($a^{3}b^{2} \Leftarrow p^{2} \mid n $)}
+\newline Let $n=p_1^{2}\ p_2^{2}\ ...\ p_n^{2}$ and let b equals to the product of all these primes $b=p_1\ p_2\ ... p_n$, and let a = 1. Then we can always write n in the form of $n = a^{3}b^{2}$
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+\textbf{Problem 5} (a) Prove that $2^{\frac{1}{3}}$ and $3^{\frac{1}{3}}$ are irrational.
+(b) Let \emph{m} and \emph{n} be positive integers. Prove that $m^{\frac{1}{n}}$ is rational if and only
+if \emph{m} is an $n^{th}$ power (i.e., $m = c^{n}$ for some integer \emph{c}).
+\end{problem}
+
+\begin{solution}
+\textbf{Proof (a) part one:} (\textbf{Proposition:} $2^{\frac{1}{3}}$ is irrational) By contradiction
+\newline Suppose $2^{\frac{1}{3}}$ is rational. Then we have $2^{\frac{1}{3}}=\frac{a}{b}$, for a, b $\in \mathbb{Z}$. After cubing both sides, we get $2b^{3}=a^{3}$. We can write both a and b as products of primes:
+\begin{align*}
+a	&= p_{a1}p_{a2}p_{a3}...p_{aj}	\\
+b	&= p_{b1}p_{b2}p_{b3}...p_{bk}
+\end{align*}
+In which $p_{a1}=2^{x}$ and $p_{b1}=2^{y}$ for x, y $\in \mathbb{Z}$. Therefore we can write the cube function as following:
+\begin{align*}
+2(2^{y}p_{b2}p_{b3}...p_{bk})^{3}	&= (2^{x}p_{a2}p_{a3}...p_{aj})^{3}	\\
+\end{align*}
+Since $p_bk \neq 2$ and $p_aj \neq 2$ for j,k $\ge$ 2, the following relation can be derived from the above equation:
+\begin{align*}
+3y + 1	&=	3x
+\end{align*}
+This cannot be possible since x, y $\in\mathbb{Z}$. Therefore, this is a contradiction.
+\end{solution}
+
+\begin{solution}
+\textbf{Proof (a) part two:} (This is pretty much exactly the same as above)
+\newline(\textbf{Proposition:} $3^{\frac{1}{3}}$ is irrational) By contradiction
+\newline Suppose $3^{\frac{1}{3}}$ is rational. Then we have $3^{\frac{1}{3}}=\frac{a}{b}$, for a, b $\in \mathbb{Z}$. After cubing both sides, we get $3b^{3}=a^{3}$. We can write both a and b as products of primes:
+\begin{align*}
+a	&= p_{a1}p_{a2}p_{a3}...p_{aj}	\\
+b	&= p_{b1}p_{b2}p_{b3}...p_{bk}
+\end{align*}
+In which $p_{a1}=3^{x}$ and $p_{b1}=3^{y}$ for x, y $\in \mathbb{Z}$. Therefore we can write the cube function as following:
+\begin{align*}
+3(3^{y}p_{b2}p_{b3}...p_{bk})^{3}	&= (3^{x}p_{a2}p_{a3}...p_{aj})^{3}	\\
+\end{align*}
+Since $p_bk \neq 3$ and $p_aj \neq 3$ for j,k $\ge$ 2, the following relationship can be derived from the above equation:
+\begin{align*}
+3y + 1	&=	3x
+\end{align*}
+This cannot be possible since x, y $\in\mathbb{Z}$. Therefore, this is a contradiction.
+\end{solution}
+
+\begin{solution}
+\textbf{Proof (b):}
+\newline ($m^{\frac{1}{n}}\ is\ rational \Rightarrow m=c^{n},\ c\in\mathbb{Z}$)
+\newline We want to prove that m has the form $m=c^{xn}$ for some c, x$\in\mathbb{Z}$.
+\newline Suppose $m^\frac{1}{n}$ is rational, so we can write it in the form of 
+\begin{align*}
+m^{\frac{1}{n}}	&= \frac{a}{b}	\\
+b^{n}m			&= a^{n}
+\end{align*}
+Now we can write a, b, m in the form of respective highest powers of a same prime that divide them $p^{i}$, $p^{j}$, $p^{k}$:
+\begin{align*}
+p^{jn}p^{k}	&=d^{in}	\\
+k			&= in - jn	\\
+k	&= (i-j)n
+\end{align*}
+Therefore, m has the form of $m=c^{xn}$ in which x = (i - j).
+\newline
+\newline ($m^{\frac{1}{n}}\ is\ rational \Leftarrow m=c^{n},\ c\in\mathbb{Z}$)
+\newline Since we have $m=c^{n}$, $m^{\frac{1}{n}}=c$, and c is rational.
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+\textbf{Problem 6} Let \emph{E} be the set of all positive even integers. We call a number \emph{e} in \emph{E} “prima” if \emph{e} cannot be expressed as a product of two other members of \emph{E}.
+\newline(i) Show that 6 is prima but 4 is not.
+\newline(ii) What is the general form of a prima in \emph{E}?
+\newline(iii) Prove that every element of \emph{E} is equal to a product of primas.
+\newline(iv) Give an example to show that \emph{E} does not satisfy a “unique prima factorization theorem” (i.e., find an element of \emph{E} that has two different factorizations as a product of primes).
+\end{problem}
+\begin{solution}
+\textbf{(i)} The prime factors for 6 are 2, 3. There is only one even prime factor, so the combination of factors for 6 will only contain one even number. Therefore, it is prima. However, 4 can be expressed as 2 x 2, so it is not prima.
+\end{solution}
+
+\begin{solution}
+\textbf{(ii)} The prima r in \emph{E} will have the general form as following:
+\begin{align*}
+r	&= 2p_1p_2p_3...p_n
+\end{align*}
+In which $p_n \neq 2$ for all n.
+\end{solution}
+
+\begin{solution}
+\textbf{(iii)} Every element e of \emph{E} is an even number, and can therefore be written as e = $2^{n}k$ for some n, k $\in\mathbb{Z}$. 2 is a prima because it only has factors 1 and 2. Since k is an integer, we can write it in the form:
+\begin{align*}
+k	&= p_1p_2p_3...p_n
+\end{align*}
+Such that $p_n \neq 2$ for all n. 2k will be a prima, and the rest of 2's are also primas. Therefore, every element of \emph{E} is equal to a product of primas.
+\end{solution}
+
+\begin{solution}
+\textbf{(iv)} If we have 180, it can be written as the product of 30 and 6, both primas, or 10 and 18, also both primas.
+\end{solution}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+\textbf{Problem 8} Find all solutions $x,y\in \mathbb{Z}$ to the following Diophantine equations:
+\newline(a) $x^{2} = y^{3}$.
+\newline(b) $x^{2} - x = y^{3}$.
+\newline(c) $x^{2} = y^{4} - 77$.
+\newline(d) $x^{3} = 4y^{2} +4y - 3$.
+\end{problem}
+
+\begin{solution}
+\textbf{(a)} Let p be a prime and $p^{a},\ p^{b}$ be the highest powers of prime that divides x and y respectively. Then we can write the Diophantine equation as:
+\begin{align*}
+p^{2a}	&= p^{3b}	\\
+2a		&= 3b	\\
+\frac{a}{b}	&= \frac{3}{2}
+\end{align*}
+The solution to this equation will have numbers of the same prime factor satisfy the above relation. (e.g. if p is a prime factor of x, then $p^{3}$ will factor x as well while $p^{2}$ will factor y.)
+\end{solution}
+
+\begin{solution}
+\textbf{(b)} $x^{2}-x$ can be written as $x(x-1)$, in which x and (x - 1) are always coprime. Therefore, from the conclusion of previous question, for every prime factor $p_x$ for x and $p_{x-1}$ for (x - 1), $p^{3}$ and $p_{x-1}^{3}$ must also be a factor of x and (x - 1) respectively.
+\end{solution}
+
+\begin{solution}
+\textbf{(c)} I didn't really find a good way to prove it.
+\begin{align*}
+x = \pm 2,\ y=3	\\
+x = \pm 2,\ y=-3
+\end{align*}
+\end{solution}
+
+\begin{solution}
+
+\end{solution}
+
+% Add pairs of problems and solutions as needed
+
+\end{document}
