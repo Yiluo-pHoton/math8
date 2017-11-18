@@ -1,0 +1,108 @@
+\documentclass[12pt, letterpaper]{hmcpset}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, mathpazo}
+\usepackage{fancyhdr}
+\usepackage{physics}
+
+% HEADING
+\pagestyle{fancy}
+\rhead{\textsc{Yiluo Li} \ (\textsc{Page} \thepage) \\ MATH 8 \ HW7 \\ 20 November 2017}
+
+\begin{document}
+\problemlist{Counting and Choosing}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 8
+\begin{problem}
+	\textbf{Problem 8}
+\end{problem}
+\begin{solution}
+	\textbf{(a)} To prove this equality, we approach it bottom up. First, we write:
+	\begin{align*}
+		\frac{(n+1)!}{(n+1-r)!r!}
+	\end{align*}
+	Which can be expressed as ${{n+1}\choose{r}}$. It can also be expressed as:
+	\begin{align*}
+		\frac{(n+1)!}{(n+1-r)!r!}	&= \frac{n!(n+1)}{(n-r)!(n-r+1)(r-1)!r}	\\
+									&= \frac{n!n+n!-n!r+n!r}{(n-r)!(n-r+1)(r-1)!r}	\\
+									&= \frac{n!(n-r+1)+n!r}{(n-r)!(n-r+1)(r-1)!r}	\\
+									&= \frac{n!}{(n-r)!r!} + \frac{n!}{[n-(r-1)]!(r-1)!}	\\
+									&= {{n}\choose{r}} + {{n}\choose{r-1}}
+	\end{align*}
+	Thus we have ${{n+1}\choose{r}}={{n}\choose{r}}+{{n}\choose{r-1}}$.
+\end{solution}
+
+\begin{solution}
+	\textbf{(b)}For this question, we can apply the binomial theorem, and rewrite the original equation as following:
+	\begin{align*}
+		\sum_{k=1}^{n}{{n}\choose{k}}2^k1^{n-k}	&= (2+1)^n	\\
+												&= 3^n
+	\end{align*}
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 12
+\begin{problem}
+	\textbf{Problem 12}
+\end{problem}
+\begin{solution}
+	\textbf{(a)} The total arangement for the six numbers is $n!=6!=720$.
+\end{solution}
+
+\begin{solution}
+	\textbf{(b)} To approach this problem, we will use modulus arithmetic. First, write the six-digit number as $abcdef$ in which each letter represent a digit and hence $0\leq a,b,c,d,e,f\leq 9\in\mathbb{Z}$. Therefore, to find the remainder of the number when divided by 4, we can then write this six digit number in the following form:
+	\begin{align*}
+		(a(10^5)+b(10^4)+c(10^3)+d(10^2)+e(10^1)+f^(10^0)) \mod 4
+	\end{align*}
+	Then we should investigate the results for $10^k \mod 4$ when $0\leq k\leq 5$:
+	\begin{align*}
+		10^0 \mod 4 	&= 1	\\
+		10^1 \mod 4 	&= 2	\\
+		10^2 \mod 4 	&= 0	\\
+		10^3 \mod 4 	&= 0	\\
+		10^4 \mod 4 	&= 0	\\
+		10^5 \mod 4 	&= 0
+	\end{align*}
+	Therefore, we can then write:
+	\begin{align*}
+		(a(10^5)+b(10^4)+c(10^3)+d(10^2)+e(10^1)+f(10^0)) \mod 4	\equiv (e(10^1)+f(10^0)) \mod 4
+	\end{align*}
+	Now we know that if a six-digit number $abcdef$ has $2e+f \mod 4 \equiv 0 \mod 4$, then $abcdef$ is divisible by 4. This relation can be rewritten as $2(e+\frac{f}{2})$, so $e+\frac{f}{2}$ must be even. To get a number divisible by 4, $f \equiv 0 \mod 2$ must be satisfied, and among the numbers we are given in the problem, 2 and 6 has odd number of 2 as factors, to satisfy $e+\frac{f}{2} \mod 2 \equiv 0$, e must be odd for f = 2 and 6, while e must be even for f = 4. Now we can split this question into three stages:
+	\newline\newline \textbf{STAGE ONE:} Choose the last two digits:
+	\newline We have (2+2(3)) ways to choose the last two digits so that it satisfies $2+\frac{f}{2} \mod 2 \equiv 0$ in which 2 is the number of arrangements when choosing f = 4, and 2(3) is the number of arrangements when choosing f = 2 and 6.
+	\newline\newline \textbf{STAGE TWO:} Choose the rest four digits on the left:
+	\newline We have 4! ways of arrangements for these four digits since they don't matter anymore for the divisibility of 4, so we will just get all of them.
+	\newline\newline Therefore, we have $4!(2+2(3)) = 192$ numbers that are divisible by 4.
+\end{solution}
+
+\begin{solution}
+	\textbf{(c)} Follow the exact same proof as the previous part, we can see that only the last three digits matter. The last digit must be 2, 4, 6, which will respectively have 4, 2, 3 ways of ordered combination for the second and third last digits. Therefore, we will have $(4+2+3)3!=54$ numbers that are divisible by 8. 
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 13
+\begin{problem}
+	\textbf{Problem 13}
+\end{problem}
+\begin{solution}
+	\textbf{(a)} we have ${{18}\choose{15}} = 816$ as the coefficient of $x^{15}$.
+\end{solution}
+
+\begin{solution}
+	\textbf{(b)} The term of $x^4$ will be ${{8}\choose{k}}(2x^3)^k(-\frac{1}{x^2})^{8-k}$ where k = 4. Therefore, the coefficient will be $\frac{8!}{4!4!}2^4=1120$.
+\end{solution}
+
+\begin{solution}
+	\textbf{(c)} The expanded terms will have the form $(y)^a(x^2)^b(-\frac{1}{xy})^c$ in which $a,b,c\in\mathbb{Z}$ and $a+b+c=10$. We see that, to have constant terms, a, b, c need to have the ratio of 2:1:2. Therefore, there are only one constant term after expansion with a:b:c = 2:1:2 = 4:2:4.
+	\begin{align*}
+		{{10}\choose{4, 2, 4}} &= \frac{10!}{4!2!4!} = 3150
+	\end{align*}
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 14
+\begin{problem}
+	\textbf{(14)}
+\end{problem}
+\begin{solution}
+	To find to total number of arrangements for choosing 10 numbers from the 50 numbers is ${{50}\choose{10}}$ and the total number of arangements for the six numbers to be within the 10 numbers is ${{10}\choose{6}}$. Therefore, the chance is $\frac{{{10}\choose{6}}}{{{50}\choose{10}}}=\frac{3}{146746831}\approx 2\mathrm{e}{-8}$.
+\end{solution}
+
+\end{document}
+
