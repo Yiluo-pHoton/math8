@@ -1,0 +1,92 @@
+\documentclass[12pt,letterpaper]{hmcpset}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath,mathpazo}
+\usepackage{fancyhdr}
+\usepackage{physics}
+
+% HEADER
+\pagestyle{fancy}
+\rhead{ \textsc{Yiluo Li} \ (\textsc{Page} \thepage)  \\ MATH 8 \ HW8 \\ 27 November 2017}
+\begin{document}
+
+\problemlist{More on Sets}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 1
+\begin{problem}
+	\textbf{Problem 1}
+\end{problem}
+
+\begin{solution}
+	\textbf{(a)} We prove it forward and backward:
+	\newline \textbf{Forward} ($A\cup B = A \rightarrow B\subseteq A$):
+	\newline First let x be an element of B. For all $x\in B$, $x\in A\cup B$. And because $A\cup B = A$, for all $x\in B$, $x\in A$. Therefore, $B \subseteq A$.
+	\newline
+	\newline \textbf{Backward} ($A\cup B = A \leftarrow B\subseteq A$):
+	\newline Backward is rather obvious. For all $y \in A$, $y\in A\cup B$ since B is a subset of A. Therefore concluding that $A\cup B = A$.
+\end{solution}
+
+\begin{solution}
+	\textbf{(b)} Let $x\in (A-C)\cap (B-C)$. $x\in A - C$ and $x\in B - C$. By definition, $x\in A$ and $x\in B$ but $x\notin C$. Therefore $x\in (A\cap B) - C$.
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 4
+\begin{problem}
+	\textbf{Problem 4}
+\end{problem}
+
+\begin{solution}
+	\textbf{(a)} 73 + 76 + 10 - 100 = 59. Therefore 59\% of people that like both.
+\end{solution}
+
+\begin{solution}
+	\textbf{(b)} 30 - (16 + 17 + 14 - 8 - 7 - 9) = 7. There are 7 children that support all three.
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 6
+\begin{problem}
+	\textbf{Problem 6} 
+\end{problem}
+
+\begin{solution}
+	To find the union of a set of cubes and a set of squares, we need to know how many integers are both squares and cubes. $4^6<10000$ and $5^6>10000$ so there are 4. $\sqrt{10000} = 100$ and $int(\sqrt[3]{10000}) = 21$. So we have 100 + 21 - 4 = 117 numbers that are either cubes or squares. Therefore, there are 9883 integers that are neither.
+\end{solution}
+
+
+\problemlist{Equivalence Relations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 1
+\begin{problem}
+	\textbf{Problem 1}
+\end{problem}
+
+\begin{solution} (i) (iii) (v) (vi) and (viii) are equivalence relations on the given set S.
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 2
+\begin{problem}
+	\textbf{Problem 2}
+\end{problem}
+
+\begin{solution}
+	(i) The equivalence classes are each a pair of opposite numbers.
+	\newline
+	\newline (iii) Since we can re-write this as $a(a + 1)$ and we know that the two consecutive integers are co-prime, that is, they don't have any same prime facotrs. Therefore, their product has unique prime factorization among all the other pairs. Therefore, the equivalence class is just each an indivudual integer.
+	\newline
+	\newline (v) The equivalence class is all the points on a same circle that has center at the origin.
+	\newline
+	\newline (vi) The equivalence class contain natural numbers that have the same parity for each of their prime factors.
+	\newline
+	\newline (viii) The equivalence class are all the two-element tuples that, when the two elements are the perpendicular legs of a right triangle, have the same hypotenuse.
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 7
+\begin{problem}
+	\textbf{Problem 7}
+\end{problem}
+
+\begin{solution} Since we have all $m$ and $m + 5$ and $m + 8$ in the equivalence class, that is, for all $m\in\mathbb{Z}$, m is in the equivalence class. By nature of an equivalence class, every element is relevant. Therefore, m~n for all $m,n\in\mathbb{Z}$.
+\end{solution}
+
+
+% Add pairs of problems and solutions as needed
+
+\end{document}
